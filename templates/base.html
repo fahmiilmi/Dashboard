@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{title}}</title>
+	<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.4.0.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+	{% include "snippets/styles.html" %}
+	
+	{% block app_css %}
+		<link rel="stylesheet" type="text/css" href="{% static "css/styles.css" %}">
+	{% endblock app_css %}
+</head>
+<body>
+	{% include "snippets/navbar.html" %}
+	
+	<div class="jumbotron jumbotron-fluid">
+	  <div class="container text-white text-center">
+	    
+	    {% block header %}
+	    	
+	    {% endblock header %}
+
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+		<div class="container bg-white text-dark shadow" style="margin-top:-100px"
+		id="myBody" >
+			{% block content-1 %}
+				
+			{% endblock content-1 %}
+		</div>
+
+		<div class="container bg-root text-black">
+			
+			{% block content-2 %}
+				
+			{% endblock content-2 %}
+			
+		</div>
+
+		<div class="container bg-root text-black">
+			
+			{% block content-3 %}
+				
+			{% endblock content-3 %}
+			
+		</div>
+
+	</div>
+	
+	{% include "snippets/scripts.html" %}
+</body>
+</html>
+
+
+
+
+
+
+
