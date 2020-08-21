@@ -4,9 +4,9 @@ from django.shortcuts import render
 
 def index(request):
 	context = {
-		'title':'About',
-		'heading':'About',
-		'subheading':'tentang kelas terbuka'
+		'title':'Detail',
+		'heading':'Detail',
+		
 	}
 
 	return render(request,'about/index.html',context)
